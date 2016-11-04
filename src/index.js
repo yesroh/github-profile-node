@@ -1,7 +1,10 @@
-const http = require('./clientHttp')
+const loadStarreds = require('./loadStarreds')
 
-http.get('/users/hernandev')
- .then(response => response.data)
- .then(data => {
-   console.log(data)
+loadStarreds('vedovelli')
+ .then(response => {
+   console.log(response.data.length);
+  //  console.log(response.headers);
  })
+ // .then(data => {
+ //   console.log(data.length)
+ // })
