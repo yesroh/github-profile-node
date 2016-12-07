@@ -3,9 +3,9 @@ const paginatonParser = require('github-pagination-parser')
 
 const loadStarreds = (username, page = 1, acc = []) => {
   const params = { per_page: 100, page }
-  const path = `/users/${username}/starred`;
+  const path = `/users/${username}/starred`
   return http.get(path, { params }).then(response => processResponse(response, username, acc))
-};
+}
 
 const processResponse = ({ data, headers }, username, acc) => {
   const link = paginatonParser(headers.link)
@@ -17,4 +17,4 @@ const processResponse = ({ data, headers }, username, acc) => {
   return newData
 }
 
-module.exports = loadStarreds;
+module.exports = loadStarreds
