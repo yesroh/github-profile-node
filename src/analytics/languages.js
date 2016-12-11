@@ -1,12 +1,8 @@
-const analyticsLanguages = data => {
-  return data.reduce((acc, repo) => {
-    if (acc[repo.language] === undefined) {
-      acc[repo.language] = 1
-    } else {
-      acc[repo.language]++
-    }
+const incrementKey = (data, key) => (data[key] || 0) + 1
 
-    return acc
+const analyticsLanguages = repos => {
+  return repos.reduce((acc, { language }) => {
+    return Object.assign({}, acc, { [language]: incrementKey(acc, language) })
   }, {})
 }
 
