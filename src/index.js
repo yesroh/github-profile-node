@@ -1,10 +1,8 @@
+const analytics = require('./analytics')
 const loadStarreds = require('./loadStarreds')
 
-loadStarreds('vinicius73')
- .then(data => {
-   console.log(data.length)
-  //  console.log(response.headers);
- })
- // .then(data => {
- //   console.log(data.length)
- // })
+loadStarreds('vedovelli')
+  .then(analytics)
+  .then(data => {
+    console.log(data)
+  })
