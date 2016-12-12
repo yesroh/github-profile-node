@@ -1,6 +1,6 @@
 const analyticsLanguages = require('./languages')
 
-module.exports = data => {
-  const languages = analyticsLanguages(data)
+module.exports = repos => {
+  const languages = analyticsLanguages(repos)
   return { languages }
 }
