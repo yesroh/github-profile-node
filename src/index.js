@@ -12,3 +12,11 @@ loadStarreds(username)
   .then(data => {
     console.log(data)
   })
+  .catch(err => {
+    const { response = {} } = err
+    if (response.status === 404) {
+      throw new Error('user not found')
+    }
+
+    throw err
+  })
