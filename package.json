@@ -7,6 +7,7 @@
     "lint": "eslint ./src/*.js"
   },
   "dependencies": {
+    "argv": "^0.0.2",
     "axios": "^0.15.2",
     "github-pagination-parser": "^0.1.2"
   },

@@ -1,7 +1,15 @@
+const argv = require('argv')
 const analytics = require('./analytics')
 const loadStarreds = require('./loadStarreds')
+const args = argv.option([{
+  name: 'username',
+  short: 'u',
+  type: 'string',
+  description: 'User name for analytics',
+  example: "'script --username=value' or 'script -u value'"
+}]).run()
 
-const username = process.argv[2]
+const { username } = args.options
 
 if (username === undefined) {
   throw new Error('need a valid username')
